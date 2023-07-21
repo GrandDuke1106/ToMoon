@@ -147,12 +147,12 @@ mod tests {
 
         match yaml.get_mut("external-controller") {
             Some(x) => {
-                *x = Value::String(String::from("127.0.0.1:9090"));
+                *x = Value::String(String::from("0.0.0.0:9090"));
             }
             None => {
                 yaml.insert(
                     Value::String(String::from("external-controller")),
-                    Value::String(String::from("127.0.0.1:9090")),
+                    Value::String(String::from("0.0.0.0:9090")),
                 );
             }
         }
